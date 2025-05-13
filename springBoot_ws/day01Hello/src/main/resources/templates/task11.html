@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>사칙연산 결과: <span th:text="${result}"></span></h2>
+<form th:action="@{/calculator}">
+    <input type="text" name="s1" th:value="${s1}">
+    <input type="text" name="c" th:value="${c}">
+    <input type="text" name="s2" th:value="${s2}">
+    <button>계산하기</button>
+</form>
+</body>
+</html>
