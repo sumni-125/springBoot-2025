@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fruit">
+
+
+    <select id="selectAll" resultType="Fruit">
+        select * from fruits
+    </select>
+
+    <!--<select id="selectJoin" resultType="">
+        select f.fruit_name name, f.color, fp.price
+        from fruits f
+        join fruit_price fp
+        on f.fruit_name=fp.name
+    </select>-->
+
+    <insert id="insert" parameterType="Fruit">
+        insert into fruits values(#{fruit_name}, #{color})
+    </insert>
+
+</mapper>

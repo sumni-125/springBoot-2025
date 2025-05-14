@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit Regist Form</title>
+</head>
+<body>
+<form th:action="@{/registFruit}" method="post">
+    <input type="text" name="fruit_name" placeholder="과일명을 입력하세요">
+    <input type="text" name="color" placeholder="과일 색깔을 입력하세요">
+    <button>입력완료</button>
+</form>
+</body>
+</html>

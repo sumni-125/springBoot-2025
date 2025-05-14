@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit List</title>
+</head>
+<body>
+<h2>🍓🍊🥝Fruit List🍒🍇</h2>
+
+<div th:each="fruit:${list}">
+    <span th:text="${fruit.fruit_name}"></span>
+    <span th:text="${fruit.color}"></span>
+</div>
+
+<button onclick="location.href='/registForm'">과일등록하기</button>
+
+
+<!--a th:href="@{/registForm}">  과일등록</a-->
+</body>
+</html>
