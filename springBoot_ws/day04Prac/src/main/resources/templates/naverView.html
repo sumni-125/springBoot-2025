@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Naver List</title>
+  <style>
+    table, td{
+    border:1px solid black;
+    border-collapse:collapse;
+    }
+
+    img{
+    width:100px;
+    height:100px;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <td>title</td>
+    <td>lprice</td>
+    <td>image</td>
+    <td>link</td>
+  </tr>
+
+  <tr th:each="item:${list}">
+    <td th:utext="${item.title}"></td><!-- utext: 태그를 인식함 -->
+    <td th:text="${item.lprice}"></td>
+    <td><img th:src="${item.image}"></td>
+    <td><a th:href="${item.link}">상품 링크</a></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
