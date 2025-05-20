@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getData(){
+            //alert("qwe");
+
+            fetch("/members")
+            .then(response=>response.json())
+            .then((data)=>{
+
+                console.log(data);
+                showData(data);
+
+
+            })
+            .catch((err)=>{consoe.log(err);});
+
+        }
+        function showData(data){
+            console.log(data);
+            let result = document.getElementById("result");
+
+            let str="";
+            for(let i=0;i<data.length; i++){
+                let item = data[i];
+                str+=`${item.id} ${item.name} ${item.email}<br>`;
+            }
+            result.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+<div id="result"></div>
+<button onclick="getData()">고객 전체조회</button>
+</body>
+</html>

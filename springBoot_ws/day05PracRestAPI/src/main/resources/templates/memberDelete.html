@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function memberDelete(){
+
+        //alert("");
+
+        let id = document.getElementById("id").value;
+        console.log(id);
+
+        //1.사용자 id 가져오기
+        //2.사용자 id 확인하기
+        //3.fetch 요청하기, delete 요청하기
+        //pathvariable
+
+        fetch(`/members/${id}`,{
+        method:"delete"
+        })
+        .then(response => response.text())
+        .then((data)=>{console.log(data);})
+        .catch((err)=>{console.log(err);});
+
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="id">
+<button onclick="memberDelete()">삭제</button>
+</body>
+</html>

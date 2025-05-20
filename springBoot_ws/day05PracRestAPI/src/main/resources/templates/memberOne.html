@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getData(){
+            //alert("qwe");
+            let id = document.getElementById("id").value;
+            console.log(id);
+            // members/acorn1
+
+            fetch(`/members/${id}`)
+            .then(response => response.text())
+            .then((data)=>{console.log(data);})
+            .catch((err)=>{console.log(err);});
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="id">
+<div id="result"></div>
+<button onclick="getData()">고객 조회</button>
+</body>
+</html>
