@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a{
+        color:red;
+
+        }
+        .b{
+        color:blue;
+        }
+    </style>
+</head>
+<body>
+
+<h2></h2>
+<div th:each="num:${#numbers.sequence(1,10)}"><span th:text="${num}"></span></div>
+<div th:each="num:${#numbers.sequence(1,10)}" th:text="|^^ ${num}|"></div>
+
+<h2>start, end</h2>
+<div th:each="num:${#numbers.sequence(start,end)}" th:text="${num}"></div>
+</body>
+</html>
